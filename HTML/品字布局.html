@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品字布局</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 第一种float */
+        /* div{
+            height: 200px;
+            font-size: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+        .nav {
+            background: darkgoldenrod;
+            height: 200px;
+            margin: 0 auto 0;
+        }
+        .left{
+            width: 50%;
+            background: green;
+            float: left;
+        }
+        .right{
+            width: 50%;
+            background: blue;
+            float: left;
+        } */
+
+        /* 第二种 */
+        body{
+            overflow: hidden;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            margin: auto 0;
+            font-size: 20px;
+            color: #000000;
+            background: red;
+            text-align: center;
+        }
+        .nav{
+            margin: 100px auto 0;
+        }
+        .left{
+            margin-left: 50%;
+            float: left;
+            background: green;
+            transform: translateX(-100%)
+        }
+        .right{
+            float: left;
+            background: blue;
+            transform: translateX(-100%)
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">这是头部</div>
+    <div class="left">左边</div>
+    <div class="right">左边</div>
+</body>
+</html>
