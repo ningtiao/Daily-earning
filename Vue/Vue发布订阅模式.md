@@ -1,4 +1,4 @@
-```
+```javascript
   // 事件触发器
   class EventEmitter {
     constructor () {
