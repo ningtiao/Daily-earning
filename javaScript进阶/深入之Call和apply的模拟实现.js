@@ -101,3 +101,13 @@ function bar(name, age) {
     console.log(this.value)
 }
 bar.call2(foo, 'kein', 18)
+
+
+Function.prototype.myCall = function(thisArg, ...args) {
+  const fn = Symbol('fn');
+  thisArg = thisArg || window;
+  thisArg[fn] = this;
+  const result = thisArg[fn](...args);
+  delete thisArg[fn];
+  return result
+}
