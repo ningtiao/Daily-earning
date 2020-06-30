@@ -37,4 +37,17 @@ function create () {
 }
 ```
 
-#### 继承
+#### ES5实现const
+```javascript
+function _const(key, value) {
+  const desc = {
+    value:,
+    writable: false,
+  }
+  Object.definePrototype(window, key, desc)
+}
+
+_const('obj',{a: 1})
+obj.b = 2
+obj = {}
+```
