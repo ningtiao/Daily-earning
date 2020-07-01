@@ -147,3 +147,14 @@ Function.prototype.myApply = function(context) {
   delete context.fn;
   return result
 }
+
+
+// new是关键字,
+function myNew(foo, ...args) {
+  // 创建新对象
+  let obj = Object.create(foo.prototype)
+  // 执行其构造方法,并绑定新this
+  let result = foo.apply(obj, args)
+  // 如果构造方法已经return了一个对象,那么久返回该对象,否则返回myNew创建的新对象
+  return Object.prototype.toString.call(result) === '[object Object]' ? result : obj
+}
