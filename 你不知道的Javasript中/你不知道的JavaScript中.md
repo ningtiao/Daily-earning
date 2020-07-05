@@ -9,3 +9,12 @@
 - 字符串 string
 - 对象 object
 - 符号 symbol (ES6新增)
+
+除对象之外,其他统称"基本类型"
+
+##### 类型判断 typeof
+
+```javascript
+typeof undefined === 'undefined' // true
+typeof true === 'boolean' // true
+```
