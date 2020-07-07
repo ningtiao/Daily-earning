@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>大白菜</h1>
+    <h1>{{ msg }}</h1>
+    <h1>{{ count }}</h1>
+    <div>{{ name }}</div>
+    <h1>v-text</h1>
+    <div v-html="htmlStr"></div>
+    <div v-text="msg"></div>
+    <input type="text" v-model="msg">
+    <input type="text" v-model="count">
+    <button v-on:click="changeName">编辑</button>
+  </div>
+  <script src="dep.js"></script>
+  <script src="watcher.js"></script>
+  <script src="compiler.js"></script>
+  <script src="observer.js"></script>
+  <script src="vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello Vue',
+        count: 100,
+        name: '大白菜',
+        htmlStr: `<span style='color:red'>我是span标签</span>`
+      },
+      methods: {
+        changeName: function () {
+          console.log('click')
+          this.name = '大大米糕,实现v-on:click事件'
+        }
+      }
+    })
+    console.log(vm.msg)
+    // vm.msg = { test: 'yjx' }
+  </script>
+</body>
+
+</html>
