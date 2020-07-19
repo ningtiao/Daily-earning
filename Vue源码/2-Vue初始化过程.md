@@ -2,7 +2,7 @@
 ### 初始化过程
 #### 1.platforms/web/runtime/index.js
 - 给Vue.config注册了一些方法
-```javascipt
+```javascript
 // 判断是否是关键属性(表单元素input/ checked/selected/muted)
 // 如果是这些属性,这只el.props属性(属性不设置到标签上)
 // install platform specific utils
