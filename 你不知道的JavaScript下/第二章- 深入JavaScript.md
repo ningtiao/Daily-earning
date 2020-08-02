@@ -74,3 +74,30 @@ plusTen( 13 ); // 23 <-- 10 + 13
 - (2) 调用 makeAdder(10) 时得到了内层 add(..) 的另一个引用，它会将 x 记为 10，我们将这 个函数引用命名为 plusTen()。
 - (3) 调用 plusOne(3) 时，它会向 1(记住的 x)加上 3(内层 y)，从而得到结果 4。
 - (4) 调用 plusTen(13) 时，它会向 10(记住的 x)加上 13(内层 y)，从而得到结果 23。
+
+### 2.6 this标识符
+
+```js
+function foo() {
+  console.log( this.bar );
+}
+var bar = "global";
+var obj1 = { 
+  bar: "obj1",
+  foo: foo
+};
+var obj2 = { 
+  bar: "obj2"
+};
+// --------
+foo(); // “全局的”
+obj1.foo(); // "obj1"
+foo.call( obj2 ); // "obj2"
+new foo(); // undefined
+```
+关于如何设置 this 有 4 条规则，上述代码中的最后 4 行展示了这 4 条规则。
+
+- (1) 在非严格模式下，foo() 最后会将 this 设置为全局对象。在严格模式下，这是未定义的 行为，在访问 bar 属性时会出错——因此 "global" 是为 this.bar 创建的值。
+- (2) obj1.foo() 将 this 设置为对象 obj1。
+- (3) foo.call(obj2) 将 this 设置为对象 obj2。
+- (4) new foo() 将 this 设置为一个全新的空对象。
