@@ -1,5 +1,5 @@
 // 实现Storage
-
+// 万变不离其踪，记住getInstance方法、记住instance变量、记住闭包和静态方法
 class Storage {
   static getInstance () {
     if (!Storage.instance) {
