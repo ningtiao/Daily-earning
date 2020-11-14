@@ -73,6 +73,7 @@
 <script>
   var tagEle = "querySelectorAll" in document ? document.querySelectorAll(".tag") : getClass("tag"),
       paper = "querySelectorAll" in document ? document.querySelector(".tagBall") : getClass("tagBall")[0];
+      console.log(paper, 'paper')
   RADIUS = 220,
       fallLength = 500,
       tags = [],
@@ -96,6 +97,7 @@
   }
 
   function innit() {
+    console.log('11')
     for (var i = 0; i < tagEle.length; i++) {
       var a, b;
       var k = -1 + (2 * (i + 1) - 1) / tagEle.length;
@@ -123,7 +125,7 @@
     tags.forEach(function() {
       this.move();
     });
-
+    console.log(1)
     requestAnimationFrame(animate);
   }
 
