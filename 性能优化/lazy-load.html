@@ -72,5 +72,21 @@ function lazyload(){
 }
 // 监听Scroll事件
 window.addEventListener('scroll', lazyload, false);
+
+/**
+ * @param {String}  msg    错误信息
+ * @param {String}  url    出错文件
+ * @param {Number}  row    行号
+ * @param {Number}  col    列号
+ * @param {Object}  error  错误详细信息
+ */
+ window.onerror = function (msg, url, row, col, error) {
+  console.log('我知道错误了');
+  console.log({
+    msg,  url,  row, col, error
+  })
+  return true;
+};
+error;
 </script>
 </html>

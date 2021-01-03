@@ -32,3 +32,15 @@ const sleep = (timeOuntMS) => new Promise((resolve) => {
   await sleep(1000)
   console.log(new Date, i)
 })
+
+
+
+setTimeout(function(){
+  for (var i=0; i<5; i++) {
+    console.log(1)
+  }
+},5000)
+
+setTimeout(() => {
+  console.log('cs')
+}, 3000)
